@@ -41,7 +41,7 @@ const Filter: React.FC <FilterProps> = ({
           <Select
             value={priceRange}
             onValueChange={setPriceRange}
-            className="w-full"
+       
           >
             <SelectTrigger>
               <SelectValue placeholder="Select Price Range" />
@@ -61,7 +61,7 @@ const Filter: React.FC <FilterProps> = ({
           <Select
             value={category}
             onValueChange={setCategory}
-            className="w-full"
+     
           >
             <SelectTrigger>
               <SelectValue placeholder="Select Category" />
@@ -78,7 +78,7 @@ const Filter: React.FC <FilterProps> = ({
           <Select
             value={publishDate}
             onValueChange={setPublishDate}
-            className="w-full"
+    
           >
             <SelectTrigger>
               <SelectValue placeholder="Select Publish Date" />
