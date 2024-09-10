@@ -1,5 +1,5 @@
 // components/Filter.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Select, SelectItem, SelectTrigger, SelectValue,SelectContent } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ type FilterProps = {
   setCategory: (value: string) => void;
   publishDate: string;
   setPublishDate: (value: string) => void;
-  uniqueCategories:Array;
+  uniqueCategories:Array<string>;
   resetFilters: ()=>void;
 };
 
@@ -27,7 +27,6 @@ const Filter: React.FC <FilterProps> = ({
   resetFilters
 })=> {
 
- console.log('uniqueCategories',uniqueCategories)
   return (
     <Card className="p-4 bg-gray-100 rounded-lg shadow-md">
       <CardHeader className='flex flex-row justify-between items-center'>
@@ -68,7 +67,7 @@ const Filter: React.FC <FilterProps> = ({
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
-        {uniqueCategories.map(cat => (
+        {uniqueCategories.map((cat: string) => (
           <SelectItem key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</SelectItem>
         ))}
       </SelectContent>
